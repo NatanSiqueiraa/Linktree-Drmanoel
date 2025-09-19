@@ -1,0 +1,44 @@
+img{
+border-radius: 100px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #637c4f;
+    font-family: 'Treubuchet MS';
+    color: white;
+    text-align: center;
+}
+.topo{
+    height: 0px;
+    background-color: #012e40;
+}
+#user{
+    padding: 17px;
+    text-align: center;
+    height: 350px;
+    background-color: #012e40;
+}
+#links {
+    max-width: 675px;
+    width: auto;
+    display: block;
+    margin: 10px auto;
+}
+.link{
+    position: relative;
+    background-color: white;
+    color:#012e40;
+    border: solid 2px;
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 17px;
+    display: block;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 45px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
