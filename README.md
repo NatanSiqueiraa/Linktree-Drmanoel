@@ -1,6 +1,6 @@
 # Linktree - Drmanoel
 
-<img src="coordenação.jpg" alt="Coordenação">
+<img src="imagens/coordenacao.jpg" alt="coordenacao">
 Após a reunião o projeto foi aceito pela instituição, agradecemos a coordenação da Escola Doutor Manoel Firmino de Almeida
 
 ### Ajustes e melhorias
