@@ -9,7 +9,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Novos redicerionamentos
 - [ ] Melhora no layout
-- [ ] Acessibilidade em diferentes dispositivos
+- [x] Acessibilidade em diferentes dispositivos
 
 ## 💻 Acesse-aqui
  <a href="https://eedrmanoel.netlify.app/">https://eedrmanoel.netlify.app/</a>
