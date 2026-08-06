@@ -1,5 +1,5 @@
-img{
-border-radius: 100px;
+img {
+    border-radius: 100px;
 }
 
 body {
@@ -10,26 +10,30 @@ body {
     color: rgb(241, 241, 241);
     text-align: center;
 }
-.topo{
+
+.topo {
     height: 0px;
     background-color: #012e40;
 }
-#user{
+
+#user {
     padding: 17px;
     text-align: center;
     height: 350px;
     background-color: #012e40;
 }
+
 #links {
     max-width: 675px;
     width: auto;
     display: block;
     margin: 10px auto;
 }
-.link{
+
+.link {
     position: relative;
     background-color: white;
-    color:#012e40;
+    color: #012e40;
     border: solid 2px;
     border-radius: 10px;
     font-size: 2rem;
