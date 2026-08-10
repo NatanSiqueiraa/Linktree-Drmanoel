@@ -1,48 +1,255 @@
-img {
-    border-radius: 100px;
+/* =====================================================
+   Escola Estadual Doutor Manoel Firmino de Almeida
+   Página de acesso rápido — estilos
+   ===================================================== */
+
+:root {
+    --navy: #012e40;
+    --navy-dark: #001b26;
+    --forest: #46603a;
+    --forest-dark: #33461f;
+    --gold: #c9a961;
+    --gold-light: #e6d3a3;
+    --text-light: #f4f4f2;
+    --white: #ffffff;
+    --radius: 16px;
+    --transition: 0.25s ease;
+    --shadow-soft: 0 4px 14px rgba(1, 46, 64, 0.15);
+    --shadow-hover: 0 12px 26px rgba(1, 46, 64, 0.22);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #637c4f;
-    font-family: 'Treubuchet MS';
-    color: rgb(241, 241, 241);
+    background: linear-gradient(180deg, var(--forest) 0%, var(--forest-dark) 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-light);
     text-align: center;
 }
 
+/* Fio dourado no topo — reaproveita a classe .topo, que já existia no CSS original mas nunca era usada */
 .topo {
-    height: 0px;
-    background-color: #012e40;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
 }
 
 #user {
-    padding: 17px;
-    text-align: center;
-    height: 350px;
-    background-color: #012e40;
+    position: relative;
+    overflow: hidden;
+    padding: 44px 20px 34px;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.25);
+}
+
+#user::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.12), transparent 70%);
+    pointer-events: none;
+}
+
+.avatar-wrap {
+    display: inline-block;
+    animation: settleIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Elemento de assinatura: a foto emoldurada como um selo/medalhão que "respira" ‑ */
+.avatar {
+    display: block;
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow:
+        0 0 0 4px var(--navy-dark),
+        0 0 0 7px var(--gold),
+        var(--shadow-soft);
+    animation: sealGlow 5s ease-in-out 1.6s infinite;
+}
+
+.greeting {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 20px 0 6px;
+    color: var(--gold-light);
+    min-height: 1.2em;
+    animation: fadeInUp 0.6s ease 0.15s both;
+}
+
+h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 2.15rem);
+    font-weight: 600;
+    margin: 0 0 10px;
+    letter-spacing: 0.3px;
+    animation: fadeInUp 0.6s ease 0.25s both;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.55;
+    color: rgba(244, 244, 242, 0.85);
+    animation: fadeInUp 0.6s ease 0.35s both;
 }
 
 #links {
-    max-width: 675px;
+    max-width: 640px;
     width: auto;
     display: block;
-    margin: 10px auto;
+    margin: 36px auto;
+    padding: 0 18px;
 }
 
 .link {
     position: relative;
-    background-color: white;
-    color: #012e40;
-    border: solid 2px;
-    border-radius: 10px;
-    font-size: 2rem;
-    padding: 17px;
-    display: block;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    color: var(--navy);
+    border: 1.5px solid rgba(1, 46, 64, 0.12);
+    border-radius: var(--radius);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 16px 20px;
+    margin-bottom: 16px;
     text-decoration: none;
+    box-shadow: var(--shadow-soft);
     -webkit-tap-highlight-color: transparent;
+    animation-name: fadeInUp;
+    animation-duration: 0.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-delay: var(--delay, 0.45s);
+    transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.link:hover,
+.link:focus-visible {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.link:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+.link-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    color: var(--navy);
+    transition: transform var(--transition);
+}
+
+.link:hover .link-icon {
+    transform: scale(1.15);
+}
+
+.link-text {
+    flex: 1;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(201, 169, 97, 0.4);
+    transform: scale(0);
+    animation: rippleAnim 0.6s ease-out;
+    pointer-events: none;
+}
+
+.footer {
+    padding: 26px 20px 42px;
+    font-size: 0.8rem;
+    color: rgba(244, 244, 242, 0.78);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes settleIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sealGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 4px var(--navy-dark),
+            0 0 0 7px var(--gold),
+            0 0 0 7px rgba(201, 169, 97, 0.3),
+            var(--shadow-soft);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 4px var(--navy-dark),
+            0 0 0 7px var(--gold),
+            0 0 0 15px rgba(201, 169, 97, 0),
+            var(--shadow-soft);
+    }
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: scale(3.2);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .link {
+        font-size: 0.95rem;
+        padding: 14px 16px;
+    }
 }
